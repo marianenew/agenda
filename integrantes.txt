@@ -1,0 +1,16 @@
+Nombre: Mariane Silvia Rendon Pacheco
+
+Estructura del Proyecto
+
+src/
+├── components/
+│   ├── ContactList.vue
+│   ├── ContactForm.vue
+│   └── SearchFilter.vue
+├── App.vue
+├── main.js
+
+Iniciar Proyecto
+
+1. npm install
+2. npm run serve

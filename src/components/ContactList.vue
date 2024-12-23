@@ -22,8 +22,10 @@
           <td>{{ contact.country }}</td>
           <td>{{ contact.city }}</td>
           <td>
-            <button @click="$emit('edit', contact)">Editar</button>
-            <button @click="$emit('delete', contact.id)">Eliminar</button>
+            <button @click="$emit('edit-contact', contact)">Editar</button>
+            <button @click="$emit('delete-contact', contact.id)">
+              Eliminar
+            </button>
           </td>
         </tr>
       </tbody>
@@ -32,7 +34,7 @@
 </template>
 <script>
 export default {
-  name: "HelloWorld",
+  name: "ContactList",
   props: {
     contacts: Array,
   },
@@ -54,5 +56,47 @@ li {
 }
 a {
   color: #42b983;
+}
+body {
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-size: 14px;
+  color: #444;
+}
+
+table {
+  border: 2px solid #42b983;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+th {
+  background-color: #42b983;
+  color: rgba(255, 255, 255, 0.66);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+th.active {
+  color: #fff;
+}
+
+th.active .arrow {
+  opacity: 1;
+}
+
+.arrow {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  opacity: 0.66;
 }
 </style>
